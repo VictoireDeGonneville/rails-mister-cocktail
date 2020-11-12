@@ -1,0 +1,21 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bebas+Neue&display=swap" rel="stylesheet">
+<div class="color" style="background-color:black; height: 100vh">
+  <div class="container">
+    <h1 class="rainbow-text">Our extraordinary cocktails:</h1>
+    <ul>
+      <% @cocktails.each do |cocktail| %>
+      <div class ="col-xs-12 col-sm-4">
+        <div class ="the-card">
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
+          <% end %>
+        </div>
+      </div>
+    </ul>
+
+
+  </div>
+  <%= link_to "Add Cocktail", new_cocktail_path, class: "rainbow-button" %>
+</div>
+
+

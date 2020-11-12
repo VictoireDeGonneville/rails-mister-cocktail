@@ -1,0 +1,15 @@
+<div class="card-description"><h2><%= @cocktail.name %></h2>
+  <% @cocktail.doses.each do |dose| %>
+    <ul>
+      <li class="list-inline">
+        <div class="ingredient-dose">
+        <%= dose.ingredient.name %> | <%= dose.description %>
+        <%= link_to dose_path(dose),
+              method: :delete,
+              data: {confirm: "Sure?"} do %>
+              <i class="fas fa-dumpster-fire"></i>
+            <% end %>
+          </div>
+      </li>
+    </ul>
+  <% end %>

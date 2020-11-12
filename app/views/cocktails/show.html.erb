@@ -1,0 +1,18 @@
+
+<%= render "card" %>
+
+<div class="form">
+        <%= simple_form_for([ @cocktail, @dose ]) do |form| %>
+          <%= form.association :ingredient %>
+          <%= form.input :description %>
+          <%= form.button :submit, class: "btn btn-success" %>
+        <% end %>
+        <%= link_to "destroy cocktail", cocktail_path(@cocktail),
+      method: :delete,
+      data: { confirm: "Are you sure?" },
+      class: "btn btn-danger rounded" %>
+<%= link_to "Go back", cocktails_path, class: "btn btn-warning btn-sm" %>
+
+      </div>
+
+
